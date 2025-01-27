@@ -12,7 +12,22 @@ router.get('/', (req, res) => {
 
 // GET a single destination 
 router.get('/:id', (res, req) =>{
-    
+
+})
+
+// POST a new Destination 
+router.post('/', (req, res) =>{
+
+})
+
+//DELETE a Destination
+router.delete('/:id', (req, res)=>{
+
+})
+
+// EDIT a Destination
+router.get('/:id/edit', (req, res) =>{
+
 })
 
 module.exports
