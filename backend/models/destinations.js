@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const destinationSchema = new Schema(
 {
     category: { 
-        type: String, enum: ['Restaurant', 'Museum', 'Coffee Shop', 'Amusement Park', 'Landmark', 'POI']},
+        type: String, enum: ['Restaurant', 'Museum', 'Coffee Shop', 'Amusement Park', 'Landmark', 'POI'],
 
     },
 
@@ -13,4 +13,5 @@ const destinationSchema = new Schema(
     }
 
 
-);module.exports = mongoose.model('Destinations', destinationSchema);
+});
+module.exports = mongoose.model('Destinations', destinationSchema);
