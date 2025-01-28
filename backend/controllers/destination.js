@@ -16,7 +16,7 @@ const getDestination = async (req,res) =>{
     }
 }
 
-// POST new Destination
+// Create new Destination
 
 const newDestination = async (req, res) =>{
  const{category, name, description, comments} = req.body

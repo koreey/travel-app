@@ -16,7 +16,7 @@ router.get('/', getDestinations )
 // GET a single destination 
 router.get('/:id', getDestination)
 
-// POST a new Destination 
+// Create a new Destination 
 router.post('/', newDestination)
 
 //DELETE a Destination
