@@ -1,20 +1,20 @@
 const mongoose = require('mongoose');
 const express = require('express');
 const router = express.Router();
-const{newDestination} = require('../controllers/destination')
+const{ newDestination,
+        newDestinations,
+       getDestination,
+       getDestinations,
+} = require('../controllers/destination')
 
 const destinationSchema = require ('..models/destination');
 
 
 // GET all destinations
-router.get('/', (req, res) => {
-
-})
+router.get('/', getDestinations ) 
 
 // GET a single destination 
-router.get('/:id', (res, req) =>{
-
-})
+router.get('/:id', getDestination)
 
 // POST a new Destination 
 router.post('/', newDestination)

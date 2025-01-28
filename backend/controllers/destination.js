@@ -1,8 +1,20 @@
 const destinationSchema = require ('..models/destination');
 
 // GET all Destinations
+const getDestinations = async(req, res) =>{
+    const destinations = await Destination.find({})
+}
 
 // GET a single Destination 
+const getDestination = async (req,res) =>{
+    const { id} = req.params
+    
+    const destination = await Destination.findById(id)
+
+    if(!destination){
+        return res.status(400).json({ error: 'Not an existing Destination' });
+    }
+}
 
 // POST new Destination
 
@@ -12,7 +24,7 @@ const newDestination = async (req, res) =>{
 try{
 const destination =  await Destination.create({category, name, description})
 } catch (e){
-
+res.status(400).json({error: 'Error'})
 }
 }
 
@@ -22,5 +34,8 @@ const destination =  await Destination.create({category, name, description})
 // EDIT a Destination
 
 module.exports = {
-    newDestination
+    newDestination,
+    getDestination,
+    getDestinations,
+    
 }
