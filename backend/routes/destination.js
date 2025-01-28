@@ -1,10 +1,11 @@
 const mongoose = require('mongoose');
 const express = require('express');
 const router = express.Router();
-const{ newDestination,
-        newDestinations,
+const{ createDestination,
        getDestination,
        getDestinations,
+       deleteDestination,
+       updateDestination,
 } = require('../controllers/destination')
 
 const destinationSchema = require ('..models/destination');
@@ -17,16 +18,12 @@ router.get('/', getDestinations )
 router.get('/:id', getDestination)
 
 // Create a new Destination 
-router.post('/', newDestination)
+router.post('/', createDestination)
 
 //DELETE a Destination
-router.delete('/:id', (req, res)=>{
+router.delete('/:id', deleteDestination)
 
-})
-
-// EDIT a Destination
-router.get('/:id/edit', (req, res) =>{
-
-})
+// UPDATE a Destination
+router.get('/:id', updateDestination)
 
 module.exports
