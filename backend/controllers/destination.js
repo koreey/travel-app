@@ -61,6 +61,6 @@ module.exports = {
     getDestination,
     getDestinations,
     deleteDestination,
-    updateDestination
+    updateDestination,
     
 }
