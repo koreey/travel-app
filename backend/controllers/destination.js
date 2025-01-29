@@ -4,7 +4,7 @@ const { default: mongoose } = require('mongoose');
 // GET all Destinations
 const getDestinations = async(req, res) =>{
     try{
-    const destinations = await Destination.find({})
+    const destinations = await Destination.find({}).populate('user')
     res.status(200).json(destinations);
 } catch (error) {
     res.status(500).json({ error: error.message });
@@ -26,7 +26,7 @@ const getDestination = async (req,res) =>{
 
 const createDestination = async (req, res) =>{
      console.log(req.body)
- const{category, name, description, comments} = req.body
+ req.body.user = req.user._id
  // add doc to database
 try{
 const destination =  await Destination.create(req.body)

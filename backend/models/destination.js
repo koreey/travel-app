@@ -27,6 +27,10 @@ const destinationSchema = new Schema(
     comments :{
         type: String
     },
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    },
     reviews: [reviewSchema],
 
 });

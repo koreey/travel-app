@@ -2,37 +2,26 @@ import { useState, useEffect } from 'react';
 import * as destinationService from '../../services/destinationService';
 import '../PostListPage/PostListPage.css';
 import DestinationPost from '../../components/DestinationPost/DestinationPost';
+import {Link} from 'react-router-dom';
+
 
 export default function DestinationListPage() {
-    const [posts, setPosts] = useState([
-        {
-            category: '',
-            createdAt: '2025-01-22T08:35:22',
-            user: {
-              name: 'Kate',
-              email: 'kate@email.com',
-              _id: 'a45fb15',
-            },
-          },
-          {
-            content: 'Hello there from Justin',
-            createdAt: '2025-01-21T06:35:22',
-            user: {
-              name: 'Justin',
-              email: 'justin@email.com',
-              _id: 'a45fb16',
-            },
-          },
-        ]);
+    const [posts, setPosts] = useState([]);
         useEffect(() => {
             async function fetchPosts() {
               const destination = await destinationService.index();
               setPosts(destination);
+              console.log(destination);
             }
             fetchPosts();
           }, []);
         
-          const destinationPost = posts.map((p) => <DestinationPost key={p._id} post={p} />);
+          const destinationPost = posts.map((p) =>{
+            return(
+                <Link to={`/destination/details/${p._id}`}> 
+                 <DestinationPost key={p._id} post={p} />;
+                 </Link>
+            )})
         
           return (
             <>

@@ -10,6 +10,8 @@ import LogInPage from '../LogInPage/LogInPage';
 import NavBar from '../../components/NavBar/NavBar';
 import NewDestinationPage from '../NewDestinationPage/NewDestinationPage';
 import DestinationListPage from '../DestinationListPage/DestinationListPage';
+import DestinationDetailsPage from '../DestinationDetailsPage/DestinationDetailPage';
+
 export default function App() {
   const [user, setUser] = useState(getUser());
 
@@ -22,6 +24,7 @@ export default function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/posts" element={<DestinationListPage />} />
             <Route path="/destination/new" element={<NewDestinationPage />} />
+            <Route path='/destination/details/:id' element={<DestinationDetailsPage/>}/>
           </Routes>
         ) : (
           <Routes>
