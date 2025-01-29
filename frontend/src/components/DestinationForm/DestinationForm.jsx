@@ -1,37 +1,26 @@
 import { useState } from "react"
+import { useNavigate } from "react-router"
+import * as destinationService from '../../services/destinationService';
 
-const DestinationForm = () => {
+
+const DestinationForm = (props) => {
     const [category,setCategory] = useState('')
     const [name, setName] = useState('')
     const [description, setDescription] = useState ('')
     const [comments, setComments] = useState('')
     const [err, setErr] = useState(null)
+    const destination = {category, name, description, comments}
+
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) =>{
         e.preventDefault()
-        
-        const destination = {category, name, description, comments}
-        
-        const response = await fetch('/api/destination', {
-            method: 'POST',
-            body: JSON.stringify(destination),
-            headers:{
-                'Content-Type' : 'application/json'
-            }
-        })
-        const json = await response.json()
-        
-        if(!response.ok){
-            setErr(json.err)
-        }
-        if (response.ok){
-            setCategory('')
-            setName ('')
-            setDescription('')
-            setComments('')
-            setErr(null)
-            console.log('new destination added', json)
-        }
+        try {
+            const newDestination = await destinationService.create(destination);
+            navigate('/posts');
+          } catch (err) {
+            console.log(err);
+          }
     }
 
 return(

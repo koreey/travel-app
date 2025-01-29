@@ -1,5 +1,6 @@
 export default function DestinationPost({ post }) {
     return (
+       
       <article>
         <p>{post.category}</p>
         <p>{post.name}</p>
@@ -7,6 +8,8 @@ export default function DestinationPost({ post }) {
         <p>{post.comments}</p>
         {/* <h4>🕺{post?.user?.name}</h4> */}
       </article>
+     
     );
+    
   }
   

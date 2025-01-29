@@ -11,6 +11,7 @@ import NavBar from '../../components/NavBar/NavBar';
 import NewDestinationPage from '../NewDestinationPage/NewDestinationPage';
 import DestinationListPage from '../DestinationListPage/DestinationListPage';
 import DestinationDetailsPage from '../DestinationDetailsPage/DestinationDetailPage';
+import DestinationForm from '../../components/DestinationForm/DestinationForm';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -25,6 +26,7 @@ export default function App() {
             <Route path="/posts" element={<DestinationListPage />} />
             <Route path="/destination/new" element={<NewDestinationPage />} />
             <Route path='/destination/details/:id' element={<DestinationDetailsPage/>}/>
+            <Route path='/destination/:id' element={<DestinationDetailsPage/>}/>
           </Routes>
         ) : (
           <Routes>
