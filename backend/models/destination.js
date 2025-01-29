@@ -14,7 +14,7 @@ const reviewSchema = new Schema(
 const destinationSchema = new Schema(
 {
     category: { 
-        type: String, enum: ['Restaurant', 'Museum', 'Coffee Shop', 'Amusement Park', 'Landmark', 'POI'],
+        type: String
 
     },
     name: {

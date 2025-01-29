@@ -9,6 +9,7 @@ import SignUpPage from '../SignUpPage/SignUpPage';
 import LogInPage from '../LogInPage/LogInPage';
 import NavBar from '../../components/NavBar/NavBar';
 import NewDestinationPage from '../NewDestinationPage/NewDestinationPage';
+import DestinationListPage from '../DestinationListPage/DestinationListPage';
 export default function App() {
   const [user, setUser] = useState(getUser());
 
@@ -19,8 +20,8 @@ export default function App() {
         {user ? (
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/posts" element={<PostListPage />} />
-            <Route path="/posts/new" element={<NewPostPage />} />
+            <Route path="/posts" element={<DestinationListPage />} />
+            <Route path="/destination/new" element={<NewDestinationPage />} />
           </Routes>
         ) : (
           <Routes>

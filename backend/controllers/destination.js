@@ -1,4 +1,4 @@
-const destination = require ('../models/destination');
+const Destination = require ('../models/destination');
 const { default: mongoose } = require('mongoose');
 
 // GET all Destinations
@@ -25,10 +25,12 @@ const getDestination = async (req,res) =>{
 // Create new Destination
 
 const createDestination = async (req, res) =>{
+     console.log(req.body)
  const{category, name, description, comments} = req.body
  // add doc to database
 try{
-const destination =  await Destination.create({category, name, description})
+const destination =  await Destination.create(req.body)
+res.status(200).json(destination)
 } catch (error){
 res.status(400).json({error: error.message})
 }

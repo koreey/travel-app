@@ -21,7 +21,7 @@ export default function NavBar({ user, setUser }) {
             Post List
           </NavLink>
           &nbsp; | &nbsp;
-          <NavLink to="/posts/new">New Post</NavLink>
+          <NavLink to="/destination/new">ADD DESTINATION</NavLink>
           &nbsp; | &nbsp;
           <Link to="" onClick={handleLogOut}>
             Log Out

@@ -8,9 +8,6 @@ const{ createDestination,
        updateDestination,
 } = require('../controllers/destination')
 
-const destinationSchema = require ('..models/destination');
-
-
 // GET all destinations
 router.get('/', getDestinations ) 
 
@@ -26,4 +23,4 @@ router.delete('/:id', deleteDestination)
 // UPDATE a Destination
 router.get('/:id', updateDestination)
 
-module.exports
+module.exports = router;
