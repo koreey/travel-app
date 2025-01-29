@@ -1,17 +1,22 @@
-const destinationSchema = require ('..models/destination');
+const destination = require ('../models/destination');
 const { default: mongoose } = require('mongoose');
 
 // GET all Destinations
 const getDestinations = async(req, res) =>{
+    try{
     const destinations = await Destination.find({})
-}
+    res.status(200).json(destinations);
+} catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
 
 // GET a single Destination 
 const getDestination = async (req,res) =>{
     const { id} = req.params
     
     const destination = await Destination.findById(id)
-
+    res.status(200).json(destination);
     if(!destination){
         return res.status(400).json({ error: 'Not an existing Destination' });
     }
@@ -24,8 +29,8 @@ const createDestination = async (req, res) =>{
  // add doc to database
 try{
 const destination =  await Destination.create({category, name, description})
-} catch (e){
-res.status(400).json({error: 'Error'})
+} catch (error){
+res.status(400).json({error: error.message})
 }
 }
 

@@ -8,7 +8,7 @@ import NewPostPage from '../NewPostPage/NewPostPage';
 import SignUpPage from '../SignUpPage/SignUpPage';
 import LogInPage from '../LogInPage/LogInPage';
 import NavBar from '../../components/NavBar/NavBar';
-
+import NewDestinationPage from '../NewDestinationPage/NewDestinationPage';
 export default function App() {
   const [user, setUser] = useState(getUser());
 
