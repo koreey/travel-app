@@ -2,8 +2,8 @@ import { useState } from "react"
 import { useNavigate } from "react-router"
 import * as destinationService from '../../services/destinationService';
 
-
-const DestinationForm = (props) => {
+const DestinationForm = () => {
+  const { id } = useParams(); 
     const [category,setCategory] = useState('')
     const [name, setName] = useState('')
     const [description, setDescription] = useState ('')
@@ -12,6 +12,7 @@ const DestinationForm = (props) => {
     const destination = {category, name, description, comments}
 
     const navigate = useNavigate();
+    
 
     const handleSubmit = async (e) =>{
         e.preventDefault()

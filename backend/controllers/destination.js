@@ -1,5 +1,4 @@
 const Destination = require ('../models/destination');
-const { default: mongoose } = require('mongoose');
 
 // GET all Destinations
 const getDestinations = async(req, res) =>{
@@ -14,7 +13,6 @@ const getDestinations = async(req, res) =>{
 // GET a single Destination 
 const getDestination = async (req,res) =>{
     const { id} = req.params
-    
     const destination = await Destination.findById(id)
     res.status(200).json(destination);
     if(!destination){
@@ -25,9 +23,6 @@ const getDestination = async (req,res) =>{
 // Create new Destination
 
 const createDestination = async (req, res) =>{
-     console.log(req.body)
- req.body.user = req.user._id
- // add doc to database
 try{
 const destination =  await Destination.create(req.body)
 res.status(200).json(destination)
@@ -50,16 +45,15 @@ const deleteDestination = async (req, res) =>{
 }
 // UPDATE a Destination
 const updateDestination = async (req, res) =>{
-
 const { id } = req.param
     if(!mongoose.Types.ObjectId.isValid(id)){
-        return res.status(400).json({error: 'No such destination'})
+        return res.status(400).json({err: 'No such destination'})
     }
     const destination = await Destination.findOneAndUpdate({_id: id}, {
         ...req.body
     })
     if(!destination){
-        return res.status(400).json({ error: 'Not an existing destination' });
+        return res.status(400).json({ err: 'Not an existing destination' });
     }
 }
 
