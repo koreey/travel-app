@@ -17,17 +17,13 @@ export default function DestinationListPage() {
             fetchPosts();
           }, []);
         
-          const destinationPost = posts.map((p) =>{
-            return(
-                <Link to={`/destination/details/${p._id}`} key={p._id}> 
-                 <DestinationPost  post={p} />;
-                 </Link>
-            )})
+          const destinationPosts = posts.map((p) => <DestinationPost key={p._id}  post={p} />);
+           
         
           return (
             <>
               <h1>Destination List</h1>
-              <section className="destination-post-container">{destinationPost}</section>
+              <section className="destination-post-container">{destinationPosts}</section>
             </>
           );
         }

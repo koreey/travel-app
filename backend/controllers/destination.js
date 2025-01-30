@@ -1,5 +1,6 @@
 const Destination = require("../models/destination");
 
+
 // GET all Destinations
 const getDestinations = async (req, res) => {
   try {
@@ -23,7 +24,8 @@ const getDestination = async (req, res) => {
 // Create new Destination
 
 const createDestination = async (req, res) => {
-  try {
+  try { 
+    req.body.user = req.user._id
     const destination = await Destination.create(req.body);
     res.status(200).json(destination);
   } catch (error) {
@@ -57,6 +59,7 @@ const updateDestination = async (req, res) => {
     return res.status(400).json({ err: "Not an existing destination" });
   }
 };
+
 
 module.exports = {
   createDestination,

@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const reviewSchema = new Schema(
+const reviewsSchema = new Schema(
     {
     user: { type: Schema.Types.ObjectId, ref: 'User', required: true },
   content: { type: String, required: true },
-  rating: { type: Number, required: true}
+  
 }, {
   timestamps: true
 });
@@ -29,9 +29,9 @@ const destinationSchema = new Schema(
     },
     user: {
         type: Schema.Types.ObjectId,
-        ref: 'User'
+        ref: 'User', required: true
     },
-    reviews: [reviewSchema],
+    reviews: [reviewsSchema],
 
 });
 

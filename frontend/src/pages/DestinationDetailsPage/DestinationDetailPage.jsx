@@ -95,9 +95,9 @@ export default function DestinationDetailsPage() {
           <h2>Description: {post.description}</h2>
           <h2>Comments: {post.comments}</h2>
 
-          <button onClick={() => setIsEditing(true)}> Update ✏️  </button>
+          <button onClick={() => setIsEditing(true)}> Update   </button>
           <button onClick={handleDelete} style={{ marginLeft: "10px", color: "red" }}>
-            Delete ❌
+            Delete 
           </button>
         </div>
       )}
