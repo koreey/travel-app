@@ -10,6 +10,7 @@ const DestinationForm = () => {
     const [comments, setComments] = useState('')
     const [err, setErr] = useState(null)
     const destination = {category, name, description, comments}
+   
 
     const navigate = useNavigate();
     

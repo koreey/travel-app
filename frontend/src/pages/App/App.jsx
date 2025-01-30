@@ -27,6 +27,7 @@ export default function App() {
             <Route path="/destination/new" element={<NewDestinationPage />} />
             <Route path='/destination/details/:id' element={<DestinationDetailsPage/>}/>
             <Route path='/destination/:id' element={<DestinationDetailsPage/>}/>
+           
           </Routes>
         ) : (
           <Routes>

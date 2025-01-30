@@ -13,3 +13,6 @@ export async function create(destination) {
 export async function details(id) {
     return sendRequest(`${BASE_URL}/${id}`);
   }
+  export async function deleteDestination(id) {
+    return sendRequest(`${BASE_URL}/${id}` , 'DELETE');
+  }
