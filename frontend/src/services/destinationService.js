@@ -16,3 +16,6 @@ export async function details(id) {
   export async function deleteDestination(id) {
     return sendRequest(`${BASE_URL}/${id}` , 'DELETE');
   }
+  export async function updateDestination(_id){
+
+  }
