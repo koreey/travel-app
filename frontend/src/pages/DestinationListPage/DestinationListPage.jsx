@@ -19,11 +19,13 @@ export default function DestinationListPage() {
         
           const destinationPosts = posts.map((p) => <DestinationPost key={p._id}  post={p} />);
            
-        
+    
           return (
-            <>
-              <h1>Destination List</h1>
-              <section className="destination-post-container">{destinationPosts}</section>
-            </>
+             <div className="post-list-page"> {/* ✅ This applies the background image */}
+            <h1 style={{ fontWeight: 'bold', color: '#F3F3F3', fontSize: '4rem' }}>
+                Destination List
+            </h1>
+            <section className="post-item-container">{destinationPosts}</section>
+        </div>
           );
         }

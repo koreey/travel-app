@@ -41,8 +41,8 @@ button {
 
 button:hover {
   background-color: white;
-  color: #1a1a1a;
-  border-color: #1a1a1a;
+  color: #c8c2c2;
+  border-color: #FCB5B5;
 }
 
 button:disabled {
@@ -53,7 +53,8 @@ form {
   display: grid;
   gap: 1.2vmin;
   padding: 4vmin;
-  border: 0.5vmin solid #1a1a1a;
+  background-color: white;
+  border: 0.5vmin solid #FCB5B5;
   border-radius: 1vmin;
 }
 
@@ -62,7 +63,7 @@ select,
 textarea {
   padding: 0.7vmin;
   font-size: 2vmin;
-  border: 0.3vmin solid #1a1a1a;
+  border: 0.3vmin solid #FCB5B5;
   border-radius: 0.5vmin;
 }
 

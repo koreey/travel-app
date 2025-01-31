@@ -1,11 +1,12 @@
-.post-item-container {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  gap: 1rem;
+.post-list-page {
+  display: flex;
+  justify-content: center;  
+  align-items: center;  
+  flex-direction: column;  
 }
 
 .post-item-container > article {
-  border: 0.5vmin dashed rebeccapurple;
+  border: 0.5vmin dashed  #fffefe;
   padding: 2vmin;
   border-radius: 0.5vmin;
 }
