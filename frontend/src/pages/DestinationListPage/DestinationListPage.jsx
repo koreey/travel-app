@@ -21,7 +21,7 @@ export default function DestinationListPage() {
            
     
           return (
-             <div className="post-list-page"> {/* ✅ This applies the background image */}
+             <div className="post-list-page"> 
             <h1 style={{ fontWeight: 'bold', color: '#F3F3F3', fontSize: '4rem' }}>
                 Destination List
             </h1>
