@@ -21,7 +21,7 @@ export default function NavBar({ user, setUser }) {
             Destination List
           </NavLink>
           &nbsp; | &nbsp;
-          <NavLink to="/destination/new">ADD DESTINATION</NavLink>
+          <NavLink to="/destination/new">Add Destination</NavLink>
           &nbsp; | &nbsp;
           <Link to="" onClick={handleLogOut}>
             Log Out

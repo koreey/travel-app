@@ -28,7 +28,7 @@ export default function NewPostPage() {
           onChange={(evt) => setContent(evt.target.value)}
           required
         />
-        <button type="submit">ADD POST</button>
+        <button type="submit">Add Post</button>
       </form>
     </>
   );

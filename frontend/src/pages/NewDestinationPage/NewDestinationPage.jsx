@@ -51,7 +51,7 @@ return(
         value={comments}
         />
 
-<button>ADD DESTINATION</button>
+<button>Add Destination</button>
 </form>
 
 )

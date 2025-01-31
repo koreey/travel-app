@@ -13,6 +13,7 @@ import DestinationListPage from '../DestinationListPage/DestinationListPage';
 import DestinationDetailsPage from '../DestinationDetailsPage/DestinationDetailPage';
 import DestinationForm from '../../components/DestinationForm/DestinationForm';
 
+
 export default function App() {
   const [user, setUser] = useState(getUser());
 

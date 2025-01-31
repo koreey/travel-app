@@ -2,8 +2,14 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 2vmin;
+  padding: 1vmin;
   font-size: 2vmin;
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  background-color: white; 
+  z-index: 10;
 }
 
 .NavBar {
@@ -15,12 +21,12 @@
   }
 
   a:hover {
-    background-color: #1a1a1a;
+    background-color: #FCB5B5;
     color: whitesmoke;
   }
 
   a.active {
-    background-color: rebeccapurple;
+    background-color: #FCB5B5;
     color: whitesmoke;
   }
 
